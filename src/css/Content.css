@@ -1,0 +1,81 @@
+/* General styling for the content section */
+#content {
+  padding: 20px;
+  background-color: #f9f9f9;
+  margin: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #00a8e8;
+}
+
+h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Style for the dropdown button */
+.dropdown-btn {
+  background-color: #f1f1f1;
+  color: #333;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  border-left: 4px solid #00a8e8;
+  border-radius: 4px;
+}
+
+.dropdown-btn:hover {
+  background-color: #e1e1e1;
+}
+
+.icon {
+  margin-right: 10px;
+  color: #00a8e8;
+}
+
+.arrow {
+  font-size: 18px;
+  color: #00a8e8;
+  margin-left: 10px;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-left: 4px solid #ccc;
+  margin-bottom: 20px;
+  transition: max-height 0.2s ease-out;
+}
+
+ul {
+  list-style-type: none;
+  margin-left: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+  color: #555;
+  line-height: 1.6;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+ul li .icon {
+  margin-right: 10px;
+}
