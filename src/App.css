@@ -4,33 +4,10 @@
   min-height: 100vh;
 }
 
-
 .main-layout {
   display: grid;
-  grid-template-columns: 1fr 5fr; /* Header takes 1/4, content takes 3/4 */
+  grid-template-columns: 1fr 5fr; /* Header takes 1/6, content takes 5/6 */
   min-height: calc(100vh - 150px);
-}
-
-header {
-  background-color: #282c34;
-  color: white;
-  padding: 20px;
-}
-
-header nav ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-header nav ul li {
-  margin: 40px 0 10px 50px;
-  font-family: 'Times New Roman', Times, serif;
-}
-
-header nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
 }
 
 .content {
@@ -45,4 +22,10 @@ footer {
   text-align: center;
   padding: 10px;
   margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+  }
 }
