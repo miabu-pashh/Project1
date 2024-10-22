@@ -1,18 +1,3 @@
-// import React from 'react'
-
-// import '../css/TitleHeader.css';
-// export default function TitleHeader() {
-// return (
-//     <div className='titleHeader'>
-//         <h2>
-//             A Survey on the Role of WebAssembly in Modern Web Architectures:
-//             Performance, Security, and Emerging Use Cases
-//         </h2>
-//         <h3>Author Name</h3>
-//     </div>
-// );
-// }
-
 import React from "react";
 import { motion } from "framer-motion";
 import "../css/TitleHeader.css";
@@ -40,12 +25,12 @@ export default function TitleHeader() {
     },
   };
 
-  const authorVariants = {
-    hidden: { opacity: 0, x: -20 },
+  const teamVariants = {
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
-      x: 0,
-      transition: { duration: 0.5, delay: 1 },
+      y: 0,
+      transition: { duration: 0.5, delay: 1.2 },
     },
   };
 
@@ -83,6 +68,9 @@ export default function TitleHeader() {
           )
         )}
       </motion.h2>
+      <motion.h3 className="team-number" variants={teamVariants}>
+        Team 9
+      </motion.h3>
     </motion.div>
   );
 }

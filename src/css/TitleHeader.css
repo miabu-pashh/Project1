@@ -1,12 +1,9 @@
-/* 
-
 .titleHeader {
-  background-color: #00b4d8;
+  background-color: #00a8e8;
   color: white;
   padding: 2rem;
   text-align: center;
   position: relative;
-  z-index: 2;
 }
 
 .titleHeader h2 {
@@ -15,49 +12,26 @@
   line-height: 1.4;
 }
 
-.titleHeader h3 {
-  font-size: 1.2rem;
-  font-style: italic;
+.word {
+  display: inline-block;
+  margin-right: 0.2rem;
 }
 
+.team-number {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.2rem;
+  color: white;
+  margin-top: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
 
 @media (max-width: 768px) {
   .titleHeader h2 {
     font-size: 1.5rem;
   }
 
-  .titleHeader h3 {
-    font-size: 1rem;
-  }
-} */
-
-.titleHeader {
-  background-color:#00b4d8;
-  color: white;
-  padding: 1.5rem;
-  text-align: center;
-}
-
-.titleHeader h2 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-}
-
-.titleHeader h3 {
-  font-size: 1.2rem;
-  font-weight: normal;
-}
-
-@media screen and (max-width: 768px) {
-  .titleHeader {
-    padding: 1rem;
-  }
-
-  .titleHeader h2 {
-    font-size: 1.4rem;
-  }
-
-  .titleHeader h3 {
+  .team-number {
     font-size: 1rem;
   }
 }

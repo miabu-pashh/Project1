@@ -85,15 +85,14 @@ const Content = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
-        The review of multiple research papers on WebAssembly (Wasm) has
-        provided valuable insights into its capabilities, challenges, and
-        evolving applications in modern computing. This summary captures key
-        findings from the literature, covering various problem domains,
-        solutions, methodologies, and important takeaways.
+        Our survey on WebAssembly covered a variety of important topics across
+        performance optimization, security, serverless computing, tooling, and
+        applications in emerging technologies. Below is a summary of the key
+        findings:
       </motion.p>
 
       <DropdownSection
-        title="Problem Domains"
+        title="Performance Optimization"
         icon={faCogs}
         isOpen={showProblemDomains}
         setIsOpen={setShowProblemDomains}
@@ -101,143 +100,127 @@ const Content = () => {
         <ul>
           <li>
             <FontAwesomeIcon icon={faLightbulb} className="icon" /> One of the
-            recurring themes across the papers is the challenge of optimizing
-            performance and security when using WebAssembly. While WebAssembly
-            excels in certain areas, like reducing cold start latency in
-            serverless functions (Kjorveziroski et al., 2022), it still faces
-            performance bottlenecks in compute-intensive tasks (Mendki, 2020),
-            particularly when compared to native applications. Another key issue
-            is the complexity of integrating WebAssembly with legacy
-            technologies and platforms, which can lead to unexpected behaviors
-            and bugs (Waseem et al., 2023).
+            most significant advantages of WebAssembly is its ability to
+            optimize performance, particularly in web applications that require
+            near-native speeds for tasks such as 3D rendering and scientific
+            simulations. Key studies highlight: Herrera et al. (2018)
+            demonstrated that WebAssembly can drastically improve the
+            performance of computationally intensive tasks by bypassing the
+            limitations of JavaScript. Yan et al. (2021) reported performance
+            improvements of 2x to 10x in comparison to JavaScript, particularly
+            for high-load scenarios, making WebAssembly an ideal choice for web
+            applications requiring substantial computational power. Jangda et
+            al. (2019) further explored the gap between WebAssembly and native
+            code, showing that WebAssembly performs better than JavaScript for
+            CPU-bound tasks, though it still has some overhead when compared to
+            fully compiled native code.
           </li>
-          <li>
-            <FontAwesomeIcon icon={faLightbulb} className="icon" /> In addition
-            to performance, security remains a central challenge for
-            WebAssembly. As highlighted in the paper by Waseem et al. (2023),
-            the most common issues in Wasm-based applications relate to error
-            handling, security vulnerabilities, and memory management. These
-            problems affect the reliability and stability of WebAssembly in
-            real-world applications.
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faLightbulb} className="icon" />{" "}
-            Interoperability between languages and execution environments.
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faLightbulb} className="icon" />{" "}
-            Resource-constrained environments such as mobile and IoT devices.
-          </li>
+         
         </ul>
       </DropdownSection>
 
       {/* Solutions */}
       <DropdownSection
-        title="Solutions Proposed"
+        title="Security in WebAssembly"
         icon={faLightbulb}
         isOpen={showSolutions}
         setIsOpen={setShowSolutions}
       >
         <ul>
           <li>
-            <FontAwesomeIcon icon={faCogs} className="icon" /> The solutions
-            proposed in the surveyed papers demonstrate how WebAssembly can be
-            leveraged to address some of these challenges. In the context of
-            serverless computing, Kjorveziroski et al. (2022) showed that using
-            WebAssembly as an alternative to containers can significantly reduce
-            startup latency, making it more suitable for time-sensitive
-            applications at the edge. Similarly, Mendki (2020) emphasized the
-            role of WebAssembly in serverless edge computing, although
-            performance improvements are still necessary for compute-intensive
-            tasks.
+            <FontAwesomeIcon icon={faCogs} className="icon" /> While WebAssembly
+            provides excellent performance, security remains a critical
+            challenge. Several studies have pointed out vulnerabilities related
+            to memory management, cryptojacking, and code injection: Lehmann et
+            al. (2020) identified that WebAssembly's performance can be
+            exploited by malicious actors for cryptojacking, where unauthorized
+            cryptocurrency mining occurs in the user's browser without their
+            knowledge. Xia et al. (2023) addressed the issue of memory
+            corruption in WebAssembly, specifically in applications compiled
+            from memory-unsafe languages such as C and C++. Their work suggests
+            that better security frameworks are needed to prevent
+            vulnerabilities like buffer overflows. Dejaeghere et al. (2023)
+            examined how WebAssembly compares to other secure computing
+            environments like eBPF, concluding that while WebAssembly has
+            strengths, there are still areas for improvement in security
+            protocols.
           </li>
-          <li>
-            <FontAwesomeIcon icon={faCogs} className="icon" /> Another key
-            solution discussed is the Wasimoff framework by Semjonov et al.
-            (2024), which presents an innovative approach to distributed
-            computation offloading using WebAssembly in the browser. By allowing
-            device owners to securely share their CPU resources via a browser,
-            Wasimoff reduces the need for dedicated software installations,
-            simplifying distributed computation.
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faCogs} className="icon" /> Security models
-            leveraging WebAssembly's sandboxing capabilities.
-          </li>
+         
         </ul>
       </DropdownSection>
 
       {/* Methodologies */}
       <DropdownSection
-        title="Methodologies"
+        title="Serverless and Edge Computing"
         icon={faSearch}
         isOpen={showMethodologies}
         setIsOpen={setShowMethodologies}
       >
         <ul>
           <li>
-            <FontAwesomeIcon icon={faSearch} className="icon" /> In terms of
-            methodology, several papers evaluated WebAssembly's performance
-            through rigorous benchmark testing. Herrera et al. (2018) conducted
-            an in-depth comparison of WebAssembly and JavaScript, showing that
-            while WebAssembly often outperforms JavaScript for larger and more
-            complex calculations, it still lags behind native C code in
+            <FontAwesomeIcon icon={faSearch} className="icon" /> WebAssembly’s
+            portability and small binary size make it particularly useful in
+            serverless and edge computing environments. Research in this area
+            explores how WebAssembly can be used for lightweight and efficient
+            execution on resource-constrained devices: Ray (2023) demonstrated
+            WebAssembly's utility in energy-efficient IoT devices, showcasing
+            how it can reduce the computational overhead while maintaining
+            performance. Kjorveziroski et al. (2023) explored the application of
+            WebAssembly in Function-as-a-Service (FaaS) platforms, noting that
+            it allows for faster execution and reduced memory overhead when
+            compared to traditional methods. Mendki (2020) evaluated
+            WebAssembly's role in edge computing, where real-time analytics and
+            high performance are essential. The study found that WebAssembly
+            improves performance for tasks like data processing in IoT devices,
+            but still faces challenges in optimizing for more complex functions.
           </li>
-          <li>
-            <FontAwesomeIcon icon={faSearch} className="icon" /> Simulation of
-            real-world applications for efficiency measurements.
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faSearch} className="icon" /> Security
-            vulnerability analysis of WebAssembly’s sandboxing mechanisms.
-          </li>
+         
         </ul>
       </DropdownSection>
 
       {/* Key Findings */}
       <DropdownSection
-        title="Key Findings"
+        title="Tooling and Development"
         icon={faChartBar}
         isOpen={showFindings}
         setIsOpen={setShowFindings}
       >
         <ul>
           <li>
-            <FontAwesomeIcon icon={faChartBar} className="icon" /> Across the
-            papers, a consensus has emerged regarding WebAssembly's potential
-            for the future of web and edge computing. Semjonov et al. (2024)
-            found that WebAssembly provides a practical solution for distributed
-            computation in volunteer computing networks, while Mendki (2020)
-            identified the need for improved execution optimization on ARM
-            architectures. The findings suggest that while WebAssembly is
-            well-suited for serverless and distributed computing, there is still
-            room for growth, especially in terms of performance on low-power
-            devices and further integration with existing web technologies.
+            <FontAwesomeIcon icon={faChartBar} className="icon" /> Despite its
+            growing adoption, WebAssembly still faces challenges in terms of
+            tooling and system integration. Several studies have focused on
+            improving the development experience and performance optimization
+            through better tooling: Waseem et al. (2023) identified key
+            challenges developers face when integrating WebAssembly into
+            development pipelines. The study used reinforcement learning to
+            optimize compilation and runtime behavior. Wallentowitz et al.
+            (2022) examined WebAssembly’s potential in embedded systems and
+            found that cross-platform performance and consistency can still be
+            problematic due to tooling inconsistencies across platforms like
+            Rust and Emscripten. Zhang et al. (2024) provided a comprehensive
+            survey on WebAssembly runtimes and discussed the need for better
+            standardization of toolchains to reduce developer friction and
+            ensure consistent performance across platforms.
           </li>
+        </ul>
+      </DropdownSection>
+      <DropdownSection
+        title="Emerging Technology Applications"
+        icon={faChartBar}
+        isOpen={showFindings}
+        setIsOpen={setShowFindings}
+      >
+        <ul>
           <li>
-            <FontAwesomeIcon icon={faChartBar} className="icon" /> Moreover,
-            research by Yan et al. (2021) demonstrated that WebAssembly’s memory
-            usage is higher compared to JavaScript due to the linear memory
-            model employed by Wasm. This highlights an important trade-off
-            between performance and memory efficiency, a challenge that will
-            need to be addressed as WebAssembly becomes more widely used.
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faChartBar} className="icon" /> Future
-            research should focus on improving WebAssembly’s performance in
-            resource-constrained environments like IoT and mobile platforms.
-            Additionally, better tools for profiling, debugging, and optimizing
-            WebAssembly applications are necessary to make Wasm more
-            developer-friendly. Advancements like the WebAssembly System
-            Interface (WASI), discussed in papers like Kjorveziroski et al.
-            (2022), are already paving the way for WebAssembly’s broader use
-            beyond the browser, but much work remains to ensure its full
-            potential is realized.
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faChartBar} className="icon" /> Broader
-            adoption of WebAssembly is expected in non-browser environments like
-            cloud and edge computing.
+            <FontAwesomeIcon icon={faChartBar} className="icon" /> Finally,
+            WebAssembly is beginning to show promise in various emerging
+            technologies, particularly in areas like serverless computing,
+            blockchain, and machine learning: Li et al. (2022) explored
+            WebAssembly’s potential in emerging technologies through data mining
+            and patent analysis. Their work suggests that WebAssembly can play a
+            significant role in the future of serverless functions, distributed
+            computing, and other innovative fields.
           </li>
         </ul>
       </DropdownSection>

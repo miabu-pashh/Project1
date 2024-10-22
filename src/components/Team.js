@@ -85,7 +85,7 @@ const Team = () => {
       name: "Mahaboob Pasha",
       title: "Website Developer",
       description:
-        "Masters in Software Engineering at Saint Louis University. I am from South India, Hyderabad. I completed my bachelor's in GRIET, India. My role in this project is Website Developer.",
+        "Masters in Software Engineering at Saint Louis University, from South India, Hyderabad.  He is good at website development and backend development.His  role in this project is Website Developer.",
       email: "mahaboobpasha.mohammad@slu.edu",
       img: maibu,
     },
@@ -93,7 +93,7 @@ const Team = () => {
       name: "Ibro Kardasevic",
       title: "Content Validator",
       description:
-        "Senior here at SLU, and I study computer science. I enjoy being outdoors and many different sports. My role in this research effort was as a content validator and reporting/delivery lead.",
+        "Senior here at SLU, and studies computer science. He enjoy being outdoors and many different sports. His  role in this research effort was as a content validator and reporting/delivery lead.",
       email: "ikardasevic@slu.edu",
       img: Ibro,
     },
@@ -101,7 +101,7 @@ const Team = () => {
       name: "Smridhi Uppala",
       title: "Website Developer",
       description:
-        "Smridhi Uppala is a junior at Saint Louis University, majoring in Computer Science. She has a keen interest in web development and data analysis. Her role in this project is content validation.",
+        "Smridhi Uppala is a Graduate at Saint Louis University, majoring in Computer Science. She has a keen interest in web development and data analysis. Her role in this project is Website developer and content validation.",
       email: "suppala4@slu.edu",
       img: smridhi,
     },
