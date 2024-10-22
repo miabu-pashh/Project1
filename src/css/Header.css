@@ -2,14 +2,7 @@ header {
   background-color: #282c34;
   color: white;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-header nav {
-  position: sticky;
-  top: 20px;
+  width: 250px; /* Fixed width for desktop */
 }
 
 header nav ul {
@@ -19,9 +12,7 @@ header nav ul {
 }
 
 header nav ul li {
-  margin: 40px 0 10px 50px;
-  font-family: 'Times New Roman', Times, serif;
-  position: relative;
+  margin: 20px 0;
 }
 
 header nav ul li a {
@@ -29,8 +20,8 @@ header nav ul li a {
   text-decoration: none;
   font-size: 1.2rem;
   transition: color 0.3s ease;
-  display: inline-block;
-  padding-bottom: 5px;
+  display: block;
+  padding: 10px 20px;
 }
 
 header nav ul li a:hover {
@@ -39,23 +30,28 @@ header nav ul li a:hover {
 
 header nav ul li a.active {
   color: #00a8e8;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
 }
 
-.underline {
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: #00a8e8;
-}
-
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   header {
+    width: 100%;
     padding: 10px;
   }
 
+  header nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
   header nav ul li {
-    margin: 20px 0 10px 20px;
+    margin: 5px 10px;
+  }
+
+  header nav ul li a {
+    font-size: 1rem;
+    padding: 8px 15px;
   }
 }

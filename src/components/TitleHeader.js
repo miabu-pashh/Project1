@@ -83,7 +83,6 @@ export default function TitleHeader() {
           )
         )}
       </motion.h2>
-      <motion.h3 variants={authorVariants}>Author Name</motion.h3>
     </motion.div>
   );
 }
