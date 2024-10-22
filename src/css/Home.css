@@ -1,93 +1,107 @@
 #home {
-  padding: 20px;
-  background-color: #f4f4f9;
-  margin: 20px;
-  border-radius: 8px;
-  border-left: 4px solid #00a8e8;
+  padding: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-h1 {
+.main-title {
   font-size: 28px;
-  margin-bottom: 20px;
-  color: #333;
+  color: #2d3748;
+  margin-bottom: 30px;
   text-align: center;
 }
 
-.dropdown-section {
-  margin-bottom: 15px;
+.section-group {
+  margin-bottom: 40px;
 }
 
-.dropdown-header {
+.section-group h2 {
+  font-size: 24px;
+  color: #2d3748;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.dropdown-section {
+  background: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.section-header {
+  padding: 15px 20px;
+  background: #f7fafc;
   cursor: pointer;
-  font-size: 18px;
-  color: #00a8e8;
-  margin: 0;
-  padding: 10px;
-  background-color: #e7f1ff;
-  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   transition: all 0.3s ease;
 }
 
-.dropdown-header:hover {
-  background-color: #d6e9ff;
+.section-header:hover {
+  background: #edf2f7;
 }
 
-.dropdown-header.active {
-  background-color: #00a8e8;
-  color: #fff;
+.section-header.active {
+  background: #e6f6ff;
+  border-bottom: 1px solid #e2e8f0;
 }
 
-.dropdown-content {
-  background-color: #fff;
-  border-left: 4px solid #00a8e8;
-  border-radius: 5px;
-  overflow: hidden;
-  margin-top: 5px;
-}
-
-.content-item {
-  padding: 15px;
-  border-bottom: 1px solid #e7f1ff;
-}
-
-.content-item:last-child {
-  border-bottom: none;
-}
-
-.content-item h4 {
-  color: #00a8e8;
-  margin: 0 0 10px 0;
-  font-size: 16px;
-}
-
-.content-item p {
+.section-header h3 {
   margin: 0;
-  color: #555;
-  line-height: 1.6;
-  font-size: 14px;
-}
-
-p {
   font-size: 16px;
-  color: #555;
-  line-height: 1.6;
+  color: #2d3748;
+  font-weight: 600;
 }
 
-@media screen and (max-width: 768px) {
+.toggle-icon {
+  font-size: 20px;
+  color: #4a5568;
+  transition: transform 0.3s ease;
+}
+
+.section-header.active .toggle-icon {
+  color: #3182ce;
+}
+
+.section-content {
+  padding: 20px;
+  background: #ffffff;
+}
+
+.section-content p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #4a5568;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
   #home {
-    padding: 15px;
-    margin: 10px;
+    padding: 20px;
   }
 
-  h1 {
+  .main-title {
     font-size: 24px;
   }
 
-  .dropdown-header {
-    font-size: 16px;
+  .section-header {
+    padding: 12px 15px;
   }
 
-  .content-item {
-    padding: 12px;
+  .section-header h3 {
+    font-size: 15px;
+  }
+
+  .section-content {
+    padding: 15px;
+  }
+
+  .section-content p {
+    font-size: 14px;
   }
 }

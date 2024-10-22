@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../css/Taxonomy.css";
-
 const Taxonomy = () => {
+  useEffect(() => {
+    // Wait for the DOM to be fully loaded
+    const rows = document.querySelectorAll("table tbody tr");
+    // Loop over each row and add the 'loaded' class with a delay for staggered animation
+    rows.forEach((row, index) => {
+      setTimeout(() => {
+        row.classList.add("loaded"); // Add the 'loaded' class to each row
+      }, index * 200); // Delay between each row animation (200ms)
+    });
+    // Cleanup if necessary
+    return () => {
+      rows.forEach((row) => {
+        row.classList.remove("loaded");
+      });
+    };
+  }, []);
   return (
     <section id="taxonomy">
       <h2>Paper Classification</h2>
@@ -9,92 +24,74 @@ const Taxonomy = () => {
         A table summarizing the classifications of reviewed papers is shown
         below:
       </p>
-
       <div className="table-container">
         <table>
           <thead>
             <tr>
-              <th>Paper Citation</th>
+              <th>Group</th>
+              <th>Papers</th>
+              <th>Key Papers</th>
               <th>Problem Domain</th>
               <th>Solution Approach</th>
-              <th>Web Architecture Type</th>
-              <th>Evaluation Methodology</th>
-              <th>Application Domain</th>
-              <th>Security Mechanism</th>
+              <th>Methodology</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Hyttinen, Boris (2023)</td>
-              <td>Interactive Web Development</td>
-              <td>System Integration with WebAssembly</td>
-              <td>Browser-Based Architecture</td>
-              <td>Case Study using .NET</td>
-              <td>Web Applications</td>
-              <td>N/A</td>
+              <td>Performance Optimization</td>
+              <td>[1, 2, 3, 17, 19]</td>
+              <td>
+                Herrera et al. (2018), Yan et al. (2021), Jangda et al. (2019),
+                van Hasselt et al. (2022)
+              </td>
+              <td>WebAssembly performance analysis and enhancement</td>
+              <td>Measurement studies, empirical analysis</td>
+              <td>Simulations, real-world testing</td>
             </tr>
             <tr>
-              <td>Herrera, David, et al. (2018)</td>
-              <td>Numerical Program Performance</td>
-              <td>Benchmark Analysis</td>
-              <td>Client-Side and Server-Side</td>
-              <td>Empirical Testing via Ostrich Benchmark</td>
-              <td>Healthcare Monitoring</td>
-              <td>Secure Communication Protocols</td>
+              <td>Security in WebAssembly</td>
+              <td>[4, 5, 6, 16]</td>
+              <td>
+                Lehmann et al. (2020), Dejaeghere et al. (2023), Xia et al.
+                (2023), Harnes et al. (2024)
+              </td>
+              <td>Security vulnerabilities in WebAssembly</td>
+              <td>
+                Encryption, authentication protocols, ML-based anomaly detection
+              </td>
+              <td>
+                Systematic reviews, security framework analysis, case studies
+              </td>
             </tr>
             <tr>
-              <td>Waseem, Muhammad, et al. (2023)</td>
-              <td>Issues in WebAssembly Development</td>
-              <td>Categorization of Development Issues</td>
-              <td>Distributed Systems</td>
-              <td>Empirical Analysis of GitHub Data</td>
-              <td>Web Development</td>
-              <td>Memory Safety, Error Handling</td>
+              <td>Serverless and Edge Computing</td>
+              <td>[7, 8, 9, 15, 20]</td>
+              <td>
+                Ray (2023), Kjorveziroski et al. (2023), Mendki (2020), Semjonov
+                et al. (2024), Kjorveziroski et al. (2022)
+              </td>
+              <td>Serverless computing, edge computing</td>
+              <td>Optimization theory, control theory</td>
+              <td>Experimental implementations, simulations</td>
             </tr>
             <tr>
-              <td>Wallentowitz, Stefan, et al. (2022)</td>
-              <td>Embedded Systems for IoT</td>
-              <td>Portability and Runtime Optimization</td>
-              <td>Decentralized Edge Computing</td>
-              <td>Case Study on IoT Use Cases</td>
-              <td>IoT and Embedded Systems</td>
-              <td>Homomorphic Encryption</td>
+              <td>Tooling and Development</td>
+              <td>[10, 11, 12, 14]</td>
+              <td>
+                Waseem et al. (2023), Wallentowitz et al. (2022), Zhang et al.
+                (2024), Hyttinen (2023)
+              </td>
+              <td>Tooling challenges, system integration</td>
+              <td>Reinforcement learning, system implementations</td>
+              <td>Theoretical analysis, development and validation</td>
             </tr>
             <tr>
-              <td>Yan, Yutian, et al. (2021)</td>
-              <td>WebAssembly Runtime Efficiency</td>
-              <td>Performance Optimization Strategies</td>
-              <td>Cross-Browser Evaluation</td>
-              <td>Experimental Analysis Across Browsers</td>
-              <td>Web Applications</td>
-              <td>N/A</td>
-            </tr>
-            <tr>
-              <td>Semjonov, Anton, et al. (2024)</td>
-              <td>Distributed Computation Offloading</td>
-              <td>WebAssembly for Browser-Based Offloading</td>
-              <td>Browser-Based and Cloud-Edge</td>
-              <td>Benchmarking with Rust and TSP Problem</td>
-              <td>Distributed Computing</td>
-              <td>N/A</td>
-            </tr>
-            <tr>
-              <td>Kjorveziroski, Vojdan, et al. (2022)</td>
-              <td>Cold Start Latency in Serverless Computing</td>
-              <td>Multi-Runtime Environment Combining WebAssembly</td>
-              <td>Cloud and Edge Platforms</td>
-              <td>Empirical Testing on Serverless Functions</td>
-              <td>Cloud-Edge Computing</td>
-              <td>Federated Identity Management</td>
-            </tr>
-            <tr>
-              <td>Mendki, Pankaj (2020)</td>
-              <td>Serverless Edge Computing</td>
-              <td>WebAssembly vs. Container Benchmarks</td>
-              <td>Edge Computing</td>
-              <td>Benchmark Testing on ARM Architecture</td>
-              <td>Edge Computing</td>
-              <td>N/A</td>
+              <td>Emerging Tech Applications</td>
+              <td>[13]</td>
+              <td>Li et al. (2022)</td>
+              <td>Trend analysis in emerging technologies</td>
+              <td>Data mining, patent analysis</td>
+              <td>Empirical analysis</td>
             </tr>
           </tbody>
         </table>
@@ -102,5 +99,4 @@ const Taxonomy = () => {
     </section>
   );
 };
-
 export default Taxonomy;

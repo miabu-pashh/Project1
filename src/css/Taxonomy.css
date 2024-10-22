@@ -1,27 +1,27 @@
 #taxonomy {
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #F9F9F9;
   margin: 20px;
   border-radius: 8px;
-  border-left: 4px solid #00a8e8;
+  border-left: 4px solid #00A8E8;
 }
-
+/* Heading style */
 h2 {
   font-size: 28px;
   color: #333;
   margin-bottom: 20px;
 }
-
+/* Paragraph text style */
 p {
   font-size: 16px;
   color: #555;
   margin-bottom: 20px;
 }
-
+/* Table container to manage overflow */
 .table-container {
   overflow-x: auto;
 }
-
+/* Table styling */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -30,17 +30,35 @@ table {
   text-align: left;
   border: 1px solid #ddd;
 }
-
+/* Styling for table headers */
 th, td {
   padding: 12px;
   border: 1px solid #ddd;
 }
-
+/* Header background color */
 th {
-  background-color: #00a8e8;
+  background-color: #00A8E8;
   color: white;
 }
-
+/* Even rows with alternating background color */
 tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #F2F2F2;
+}
+/* Animation on row hover */
+table tbody tr {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+table tbody tr:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds subtle shadow on hover */
+}
+/* Fade-in animation on page load for each row */
+table tbody tr {
+  opacity: 0;
+  transform: translateY(20px); /* Start with slight offset */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+table tbody tr.loaded {
+  opacity: 1;
+  transform: translateY(0); /* Reset transform when animation completes */
 }
